@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+    name: survey-app-deployment 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python_app
+  template:
+    metadata:
+      labels:
+        app: python_app
+    spec:
+      containers:
+      - name: python-app-container
+        image:  abdo133/python_app
+        ports:
+        - containerPort: 8000    
+     
