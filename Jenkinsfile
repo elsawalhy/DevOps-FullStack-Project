@@ -14,7 +14,7 @@ pipeline {
 
             steps{
                sh """
-                 cd python
+                 cd Python
                  docker rmi abdo133/python_app || true 
                  docker build -t abdo133/python_app .
                  docker push abdo133/python_app
